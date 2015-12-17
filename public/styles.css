@@ -17,6 +17,9 @@ body {
 	font-size: 48px;
 	padding: 5px;
 	background-color: #E59A00;
+	-webkit-transition-duration: 300ms;
+	-o-transition-duration: 300ms;
+	transition-duration: 300ms;
 }
 
 .navbar a:hover {
@@ -29,6 +32,7 @@ body {
 	background-color: white;
 	margin: 0 auto;
 }
+
 .container {
 	width: 900px;
 	height: 100%;
@@ -49,8 +53,36 @@ body {
 	margin-top: 3vw;
 	font-family: fantasy;
 	margin: 0 auto;
-	
 }
+
+.socialmedia {
+	float: right;
+	width: 78px;
+	background-color: #E59A00;
+	height: 329px;
+	position: fixed;
+	border-radius: 10px;
+}
+
+.socialmedia a {
+	height: 50px;
+	width: 50px;
+}
+
+.socialmedia img:hover {
+	-webkit-filter: grayscale(0%);
+	-webkit-transition-duration: 300ms;
+	-o-transition-duration: 300ms;
+	transition-duration: 300ms;
+}
+
+.socialmedia img {
+	width: 100%;
+	height: 100%;
+	padding-bottom: 5px;
+	-webkit-filter: grayscale(100%);
+}
+
 #order{
 	width: 20vw;
 }
