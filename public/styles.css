@@ -31,7 +31,6 @@ body {
 }
 .container {
 	width: 900px;
-<<<<<<< HEAD
 	height: 100%;
 	opacity: 1.0;
 	margin: 0 auto;
@@ -40,18 +39,6 @@ body {
 	background: grey;
 	border-bottom: 25px solid #E59A00;
 	position: relative;
-=======
-	position: absolute;
-	height: 100%;
-	opacity: 1.0;
-	display: block;
-	text-align: center; 
-	background-color: grey;
-	border-bottom: 25px solid #E59A00;
-	margin: 0 auto;
-	position: relative;
-
->>>>>>> 3f1ac1f7940cacb2f4e4c673182beda0ce4d4041
 }
 
 #content{
