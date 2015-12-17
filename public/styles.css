@@ -28,4 +28,43 @@ body {
 	position: absolute;
 	left: 23%;
 	height: 100%;
+	/*seth added*/
+	text-align: center; 
+	display: inline;
+
+}
+#content{
+	text-align: left;
+	font-size: 2vw;
+	display: block;
+	padding: 20px;
+	margin-top: 3vw;
+	font-family: fantasy;
+	margin: 0 auto;
+	
+}
+#order{
+	width: 20vw;
+}
+#first_name{
+	display: block;
+}
+#last_name{
+	display: block;
+}
+#phone{
+	display: block;
+}
+#zip_code{
+	display: block;
+}
+#address{
+	display: block;
+}
+#city{
+	display: block;
+}
+input{
+	font-size: 2vw;
+	border:solid #ffb43f 2px;
 }
