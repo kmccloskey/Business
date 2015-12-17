@@ -19,19 +19,25 @@ body {
 }
 
 .navbar a:hover {
-	background-color: black;
+	background-color: #F67C2E;
 }
-
+/*This can be deleted once content is added*/
+.filler {
+	height: 900px;
+	width: 85%;
+	background-color: white;
+	margin: 0 auto;
+}
 .container {
 	width: 900px;
-	position: absolute;
-	left: 23.2%;
-	height: 90%;
+	height: 100%;
 	opacity: 1.0;
+	margin: 0 auto;
 	text-align: center; 
-	display: inline;
-	background-color: grey;
+	display: block;
+	background: grey;
 	border-bottom: 25px solid #E59A00;
+	position: relative;
 }
 
 #content{
