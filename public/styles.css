@@ -25,8 +25,8 @@ body {
 
 .container {
 	width: 900px;
-	position: absolute;
-	height: 100%;
+	/*position: absolute;*/
+	/*height: 100%;*/
 	opacity: 1.0;
 	display: block;
 	text-align: center; 
@@ -34,41 +34,50 @@ body {
 	border-bottom: 25px solid #E59A00;
 	margin: 0 auto;
 	position: relative;
+	/*height: 100%;*/
 
 }
 
-#content{
+.order-container {
+	width: 85%;
+	margin: 0 auto;
+	min-height: 800px;
+	text-align: center;
+}
+
+.info{
 	text-align: left;
 	font-size: 2vw;
-	display: block;
+	display: inline-block;
 	padding: 20px;
 	margin-top: 3vw;
-	font-family: fantasy;
-	margin: 0 auto;
-	
+	font-family: fantasy, sans-serif;
+	/*margin: 0 auto;*/
+	width: 300px;
+	vertical-align: top;	
 }
-#order{
-	width: 20vw;
+
+.cookies{
+	width: 300px;
+	display: inline-block;	
+	vertical-align: top;
+	margin-top: 3vw;
 }
-#first_name{
-	display: block;
-}
-#last_name{
-	display: block;
-}
-#phone{
-	display: block;
-}
-#zip_code{
-	display: block;
-}
-#address{
-	display: block;
-}
-#city{
-	display: block;
-}
+
 input{
-	font-size: 2vw;
+	font-size: 20px;
+	border:solid #E59A00 2px;
+	/*display: block;*/
+	font-family: fantasy;
+	margin: 10px 0 10px 0;
+}
+
+.submitbutton {
+	display: block;
+}
+option{
+	border:solid #E59A00 2px;
+}
+select{
 	border:solid #E59A00 2px;
 }
