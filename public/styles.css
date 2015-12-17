@@ -3,7 +3,6 @@ body {
 }
 
 .navbar {
-	background-color: #E59A00;
 	text-align: center;
 	margin: 0 auto;
 	margin-top: 5%;
@@ -16,6 +15,7 @@ body {
 	color: white;
 	font-size: 48px;
 	padding: 5px;
+	background-color: #E59A00;
 }
 
 .navbar a:hover {
@@ -24,15 +24,16 @@ body {
 
 .container {
 	width: 900px;
-	background-color: white;
 	position: absolute;
-	left: 23%;
-	height: 100%;
-	/*seth added*/
+	left: 23.2%;
+	height: 90%;
+	opacity: 1.0;
 	text-align: center; 
 	display: inline;
-
+	background-color: grey;
+	border-bottom: 25px solid #E59A00;
 }
+
 #content{
 	text-align: left;
 	font-size: 2vw;
