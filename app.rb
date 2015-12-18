@@ -7,3 +7,7 @@ end
 get '/order' do
 	erb :order
 end
+
+get '/about' do
+	erb :about
+end
