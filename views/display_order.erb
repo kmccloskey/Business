@@ -7,16 +7,18 @@
 <!-- C.NAME IS EACH COOKIE IN THE ARRAY BEING DISPLAYED -->
 <div><%= c.name %></div>
 <!-- C.AMOUNT IS EACH NUMBER OF COOKIE FROM ARRAY BEING DISPLAYED -->
-<div><%= c.amount + " each" %></div>
+<div><%= c.amount.to_s + " each" %></div>
 <!-- THE TOTAL NEEDS TO BE THE TOTAL AMOUNTS FROM THE ARRAY -->
-<div><% total = %>
+<% total = total + c.amount %>
 <%end%>
+<span class='total'><%= total.to_s + " total cookies"%> </span>
 
-<div><%= "First Name: " + @user.first_name %></div>
-<div><%= "Last Name: " + @user.last_name %></div>
-<div><%= "Phone Number: " + @user.phone %></div>
-<div><%= "Address: " + @user.address %></div>
-<div><%= "City: " + @user.city %></div>
-<div><%= "Zip Code: " + @user.zip_code %></div>
-<div><%= "Email: " + @user.email %></div>
+<div><%= "<span class='user'>First Name:</span> " + @user.first_name %></div>
+<div><%= "<span class='user'>Last Name:</span> " + @user.last_name %></div>
+<div><%= "<span class='user'>Phone Number:</span> " + @user.phone %></div>
+<div><%= "<span class='user'>Address:</span> " + @user.address %></div>
+<div><%= "<span class='user'>City:</span> " + @user.city %></div>
+<div><%= "<span class='user'>Zip Code:</span> " + @user.zip_code %></div>
+<div><%= "<span class='user'>Email:</span> " + @user.email %></div>
 </div>
+

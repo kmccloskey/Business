@@ -7,6 +7,9 @@ end
 get '/order' do
 	erb :order
 end
+get '/contact' do
+	erb :contact
+end
 
 
 post '/process' do

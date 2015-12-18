@@ -1,3 +1,8 @@
+@font-face {
+    font-family: seth;
+    font-weight: normal;
+    src: url(fonts/Sketch_Block.ttf);
+}
 body {
 	background-color: #646462;
 
@@ -59,9 +64,10 @@ body {
 .cookies{
 	width: 300px;
 	display: inline-block;	
-	vertical-align: top;
-	margin-top: 3vw;
+	/*vertical-align: top;*/
+	margin-top: 8vw;
 	font-family: fantasy;
+	font-size: 3vw;	
 	
 }
 
@@ -111,9 +117,7 @@ select{
 	border:solid #E59A00 2px;
 }
 
-h3{
-	margin: 0
-}
+
 .orderguide{
 	font-size:20px;
 	display: block;
@@ -146,10 +150,34 @@ h3{
 	color: white;
 	font-family: courier;
 }
+.user{
+	color: white;
+}
+.total{
+	color: #e59A00;
 
+}
+.contact{
+	font-family: seth;
+	font-size: 8vw;
+	margin: 0;
+	padding-top: 30px;
+}
+.comments{
+	width: 500px;
+	height: 300px;
+	text-align: center;
 
-
-
+}
+.ad{
+	font-size: 3vw;
+	font-family: courier;
+	margin: 0;
+}
+.c_submitbutton {
+	display: block;
+	margin: 0;
+}	
 
 
 
