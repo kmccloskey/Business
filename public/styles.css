@@ -25,7 +25,6 @@ body {
 .navbar a:hover {
 	background-color: #F67C2E;
 }
-/*This can be deleted once content is added*/
 
 .container {
 	width: 900px;
@@ -111,6 +110,7 @@ option{
 select{
 	border:solid #E59A00 2px;
 }
+
 h3{
 	margin: 0
 }
@@ -121,3 +121,45 @@ h3{
 .p1{
 	font-size: 28px;
 }
+
+
+.cookieblerb div {
+	height: 200px;
+	width: 100%;
+	border: 1px solid black;
+	background-color: light-gray;
+}
+
+.cookieblerb div .imgleft {
+	width: 200px;
+	height: 100%;
+	float: left;
+}
+
+.cookieblerb div .imgright {
+	width: 200px;
+	height: 100%;
+	float: right;
+}
+
+.cookieblerb div p {
+	color: white;
+	font-family: courier;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

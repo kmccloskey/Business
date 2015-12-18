@@ -8,6 +8,7 @@ get '/order' do
 	erb :order
 end
 
+
 post '/process' do
 	# puts params
 
@@ -82,5 +83,10 @@ puts @user.inspect
 
 
 	
+end
+
+
+get '/about' do
+	erb :about
 end
 
