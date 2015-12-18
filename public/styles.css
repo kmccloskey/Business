@@ -130,8 +130,9 @@ select{
 .cookieblerb div {
 	height: 200px;
 	width: 100%;
-	border: 1px solid black;
-	background-color: light-gray;
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+	background-color: gray;
 }
 
 .cookieblerb div .imgleft {
@@ -178,6 +179,37 @@ select{
 	display: block;
 	margin: 0;
 }	
+
+.lightbox-outer {
+	/*width: 100%;*/
+	/*height: 100%;*/
+	background-color: rgba(13,13,13,0.6);
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+}
+
+.lightbox-inner {
+	margin: 0 auto;
+	width: 720px;
+	height: 100%;
+}
+
+.image {
+	/*margin-top: 50px;*/
+	width: 100%;
+	position: relative;
+	top: 50%;
+	/*Centers a picture by its height*/
+	/*stolen from Jeff*/
+	transform: translateY(-50%);
+}
+
+.invis {
+	display: none;
+}
 
 
 
