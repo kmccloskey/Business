@@ -26,12 +26,6 @@ body {
 	background-color: #F67C2E;
 }
 /*This can be deleted once content is added*/
-.filler {
-	height: 900px;
-	width: 85%;
-	background-color: white;
-	margin: 0 auto;
-}
 
 .container {
 	width: 900px;
@@ -69,7 +63,7 @@ body {
 	vertical-align: top;
 	margin-top: 3vw;
 	font-family: fantasy;
-	margin: 0 auto;
+	
 }
 
 .socialmedia {
@@ -116,4 +110,14 @@ option{
 }
 select{
 	border:solid #E59A00 2px;
+}
+h3{
+	margin: 0
+}
+.orderguide{
+	font-size:20px;
+	display: block;
+}
+.p1{
+	font-size: 28px;
 }

@@ -1,0 +1,22 @@
+<p class=p1>Please Review Your Order</p>
+
+<% total = 0%>
+<div class="orderguide">
+	<!-- COOKIEORDER.EACH IS TAKING EACH ITEM IN THE ARRAY AND PASSING IT TO "C" -->
+<% @cookieOrders.each do |c| %> 
+<!-- C.NAME IS EACH COOKIE IN THE ARRAY BEING DISPLAYED -->
+<div><%= c.name %></div>
+<!-- C.AMOUNT IS EACH NUMBER OF COOKIE FROM ARRAY BEING DISPLAYED -->
+<div><%= c.amount + " each" %></div>
+<!-- THE TOTAL NEEDS TO BE THE TOTAL AMOUNTS FROM THE ARRAY -->
+<div><% total = %>
+<%end%>
+
+<div><%= "First Name: " + @user.first_name %></div>
+<div><%= "Last Name: " + @user.last_name %></div>
+<div><%= "Phone Number: " + @user.phone %></div>
+<div><%= "Address: " + @user.address %></div>
+<div><%= "City: " + @user.city %></div>
+<div><%= "Zip Code: " + @user.zip_code %></div>
+<div><%= "Email: " + @user.email %></div>
+</div>
