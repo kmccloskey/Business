@@ -15,40 +15,91 @@ erb :contact
 end
 
 post '/contact' do
-	
-
-	client = SendGrid::Client.new do |c|
-	c.api_key = ENV['SENDGRID_API_KEY']
- 	end
-
- 	mail = SendGrid::Mail.new do |m|
- 		m.to = 'shefseth@gmail.com'   
- 		m.from = 'shefseth@gmail.com'   
- 		m.subject = 'Feedback from customer'   
- 		#passing the 'first name' into the body of email
- 		m.text = 'Test'
-	end
- 		res = client.send(mail) 
-		puts res.code
- 		puts res.body
-
-	
-
-	# class Email #this is grabbing the inputs from contact page
-	# 	attr_accessor :c_first_name, :c_last_name, :c_email, :c_comments
-	# 	def initialize (c_first_name, c_last_name, c_email, c_comments)
-	# 		@c_first_name = c_first_name
-	# 		@c_last_name = c_last_name
-	# 		@c_email = c_email
-	# 		@c_comments = c_comments
-	# 	end
-	# end
-		# c_first_name = params["c_first_name"]
-		#this is passing the c_first_name to the params so i can pass it to the email
-		# @email = Email.new(c_first_name, c_last_name, c_email, c_comments)
-erb :contact
+	 #     Add more to this, its the right idea. Pull the name, email, and comments and create a new Email object, then
+    #     Pass that emil object to the "mail function"
+        c_first_name = params["c_first_name"]
+        c_last_name = params["c_last_name"]
+        c_email = params["c_email"]
+        c_comments = params["c_comments"]
+        #this is passing the c_first_name to the params so i can pass it to the email
+        @email = Email.new(c_first_name, c_last_name, c_email, c_comments)
+    #     This is where you call the mail function and pass email information    
+    mail(@email)
+    erb :contact
 end
 
+
+# The mail feature can be in its own function and accept an Email object
+def mail(email)
+    
+    client = SendGrid::Client.new do |c|
+        c.api_key = ENV['SENDGRID_API_KEY']
+    end
+
+     mail = SendGrid::Mail.new do |m|
+         #          Specify to whom you are sending with the Email object
+         m.to = 'shefseth@gmail.com'
+         m.from = email.c_email  
+         m.subject = 'Guest Comments'   
+         #passing the 'first name' into the body of email
+         m.text = email.c_comments 
+     end
+         
+    res = client.send(mail) 
+    puts res.code
+    puts res.body 
+     
+end
+
+# This email class can sit on the bottom of the page 
+#    Good use of a new class object
+#this is grabbing the inputs from contact page
+class Email 
+    attr_accessor :c_first_name, :c_last_name, :c_email, :c_comments
+    def initialize (c_first_name, c_last_name, c_email, c_comments)
+        @c_first_name = c_first_name
+        @c_last_name = c_last_name
+        @c_email = c_email
+        @c_comments = c_comments
+    end
+end
+
+####THIS CODE IS NOT WORKING PLEASE KEEP IT HERE SO I CAN DEBUG-SL
+# class Email #this is grabbing the inputs from contact page
+# 	attr_accessor :c_first_name, :c_last_name, :c_email, :c_comments
+# 	def initialize (c_first_name, c_last_name, c_email, c_comments)
+# 		@c_first_name = c_first_name
+# 		@c_last_name = c_last_name
+# 		@c_email = c_email
+# 		@c_comments = c_comments
+# 	end
+# end
+
+	
+
+# def mail(email)
+# 	client = SendGrid::Client.new do |c|
+# 		c.api_key = ENV['SENDGRID_API_KEY']
+#  	end
+
+#  	mail = SendGrid::Mail.new do |m|
+#  		m.to = 'shefseth@gmail.com'   
+#  		m.from = 'shefseth@gmail.com'   
+#  		m.subject = 'Hello #{email.c_first_name}'  
+#  		#passing the 'first name' into the body of email
+#  		m.text = 'Test'
+# 	end
+#  		res = client.send(mail) 
+# 		puts res.code
+#  		puts res.body
+# end
+	
+
+	
+# mail(@email)	
+# erb :contact
+# end
+#*************************************
 
 post '/process' do
 
@@ -110,23 +161,24 @@ post '/process' do
 
 	@user = User.new(first_name, last_name, phone, address, city, zip_code, email)
 	#this is passing the info to @user through the params
+def mail(email)
 
 client = SendGrid::Client.new do |c|
 	c.api_key = ENV['SENDGRID_API_KEY']
  	end
 
  	mail = SendGrid::Mail.new do |m|
- 		m.to = 'shefseth@gmail.com'   
+ 		m.to = email.email   
  		m.from = 'shefseth@gmail.com'   
- 		m.subject = 'Feedback from customer'   
+ 		m.subject = 'Hello'   
  		#passing the 'first name' into the body of email
- 		m.text = params["first_name"]
+ 		m.text = email.c_comments
  		
 	end
  		res = client.send(mail) 
 		puts res.code
  		puts res.body
-
+end
 puts @user.inspect	
 
 # *******************
