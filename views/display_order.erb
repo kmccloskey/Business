@@ -9,7 +9,7 @@
 <!-- C.AMOUNT IS EACH NUMBER OF COOKIE FROM ARRAY BEING DISPLAYED -->
 <div><%= c.amount.to_s + " each" %></div>
 <!-- THE TOTAL NEEDS TO BE THE TOTAL AMOUNTS FROM THE ARRAY -->
-<% total = total + c.amount %>
+<% total = total + c.amount.to_i %>
 <%end%>
 <span class='total'><%= total.to_s + " total cookies"%> </span>
 
