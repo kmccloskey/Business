@@ -167,6 +167,7 @@ select{
 }
 .hometitle {
 	font-family: seth;
+	font-weight: normal;
 	font-size: 8vw;
 	margin: 0;
 	padding-top: 30px;	
@@ -174,12 +175,14 @@ select{
 
 .abouthead {
 	font-family: seth;
+	font-weight: normal;
 	font-size: 8vw;
 	margin: 0;
 	padding-top: 30px;
 }
 .orderhead {
 	font-family: seth;
+	font-weight: normal;
 	font-size: 8vw;
 	margin: 0;
 	padding-top: 30px;
