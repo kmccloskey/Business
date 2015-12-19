@@ -151,6 +151,7 @@ select{
 .cookieblerb div p {
 	color: white;
 	font-family: courier;
+	text-shadow: 2px 2px black;
 }
 .user{
 	color: white;
@@ -202,6 +203,8 @@ select{
 	font-size: 3vw;
 	font-family: courier;
 	margin: 0;
+	text-shadow: 2px 2px black;
+	color: white;
 }
 .c_submitbutton {
 	display: block;
@@ -236,15 +239,34 @@ select{
 	display: none;
 }
 
+.home-image {
+	width: 300px;
+	padding-left: 10px;
+	display: inline-block;
+	float: left;
+	padding-right: 10px;
+}
 
+.truck {
+	width: 300px;
+	margin: 0 auto;
+	display: inline;
+}
 
+.home-text .home-content {
+	display: inline;
+	font-family: courier;
+	color: white;
+	clear: both;
+	text-shadow: 2px 2px black;
+	font-size: 20px;
+	text-align: left;
+}
 
-
-
-
-
-
-
+.home-content {
+	display: inline-block;
+	text-align: left;
+}
 
 
 
