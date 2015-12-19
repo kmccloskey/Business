@@ -20,32 +20,32 @@ post '/contact' do
 	client = SendGrid::Client.new do |c|
 	c.api_key = ENV['SENDGRID_API_KEY']
  	end
- 	def send_mail
+
  	mail = SendGrid::Mail.new do |m|
  		m.to = 'shefseth@gmail.com'   
  		m.from = 'shefseth@gmail.com'   
  		m.subject = 'Feedback from customer'   
  		#passing the 'first name' into the body of email
- 		m.text = @email.c_first_name! 
- 	end
+ 		m.text = 'Test'
+	end
  		res = client.send(mail) 
 		puts res.code
  		puts res.body
 
-	end
+	
 
-	class Email #this is grabbing the inputs from contact page
-		attr_accessor :c_first_name, :c_last_name, :c_email, :c_comments
-		def initialize (c_first_name, c_last_name, c_email, c_comments)
-			@c_first_name = c_first_name
-			@c_last_name = c_last_name
-			@c_email = c_email
-			@c_comments = c_comments
-		end
-	end
-		c_first_name = params["c_first_name"]
+	# class Email #this is grabbing the inputs from contact page
+	# 	attr_accessor :c_first_name, :c_last_name, :c_email, :c_comments
+	# 	def initialize (c_first_name, c_last_name, c_email, c_comments)
+	# 		@c_first_name = c_first_name
+	# 		@c_last_name = c_last_name
+	# 		@c_email = c_email
+	# 		@c_comments = c_comments
+	# 	end
+	# end
+		# c_first_name = params["c_first_name"]
 		#this is passing the c_first_name to the params so i can pass it to the email
-		@email = Email.new(c_first_name, c_last_name, c_email, c_comments)
+		# @email = Email.new(c_first_name, c_last_name, c_email, c_comments)
 erb :contact
 end
 
