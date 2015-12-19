@@ -51,6 +51,7 @@ end
 
 
 post '/process' do
+
 	# puts params
 
 # PROCESSING COOKIES
@@ -110,7 +111,21 @@ post '/process' do
 	@user = User.new(first_name, last_name, phone, address, city, zip_code, email)
 	#this is passing the info to @user through the params
 
+client = SendGrid::Client.new do |c|
+	c.api_key = ENV['SENDGRID_API_KEY']
+ 	end
 
+ 	mail = SendGrid::Mail.new do |m|
+ 		m.to = 'shefseth@gmail.com'   
+ 		m.from = 'shefseth@gmail.com'   
+ 		m.subject = 'Feedback from customer'   
+ 		#passing the 'first name' into the body of email
+ 		m.text = params["first_name"]
+ 		
+	end
+ 		res = client.send(mail) 
+		puts res.code
+ 		puts res.body
 
 puts @user.inspect	
 
