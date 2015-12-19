@@ -15,12 +15,12 @@ erb :contact
 end
 
 post '/contact' do
-	def send_mail
+	
 
 	client = SendGrid::Client.new do |c|
 	c.api_key = ENV['SENDGRID_API_KEY']
  	end
-
+ 	def send_mail
  	mail = SendGrid::Mail.new do |m|
  		m.to = 'shefseth@gmail.com'   
  		m.from = 'shefseth@gmail.com'   
