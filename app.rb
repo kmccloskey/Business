@@ -26,8 +26,8 @@ post '/contact' do
     #     This is where you call the mail function and pass email information    
     mail(@email)
     erb :contact
-end
 
+end
 
 # The mail feature can be in its own function and accept an Email object
 def mail(email)
@@ -161,25 +161,50 @@ post '/process' do
 
 	@user = User.new(first_name, last_name, phone, address, city, zip_code, email)
 	#this is passing the info to @user through the params
-def mail(email)
+
+
+
+def mail(email, order)
 
 client = SendGrid::Client.new do |c|
 	c.api_key = ENV['SENDGRID_API_KEY']
  	end
 
  	mail = SendGrid::Mail.new do |m|
- 		m.to = email.email   
+ 		m.to = 'shefseth@gmail.com'   
  		m.from = 'shefseth@gmail.com'   
  		m.subject = 'Hello'   
  		#passing the 'first name' into the body of email
- 		m.text = email.c_comments
+ 		m.text = "Thank you for your order"
  		
 	end
  		res = client.send(mail) 
 		puts res.code
  		puts res.body
 end
+mail(@email, @order)
 puts @user.inspect	
+
+class Email 
+    attr_accessor :first_name, :last_name, :email,
+    def initialize (first_name, last_name, email)
+        @first_name = first_name
+        @last_name = last_name
+        @email = email
+        
+    end
+end
+
+	class Order
+		attr_accessor :name, :amount
+		def initialize(name, amount)
+			@name = name
+			@amount = amount
+ 
+		end
+	end
+
+
 
 # *******************
 
